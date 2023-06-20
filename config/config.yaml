@@ -1,0 +1,5 @@
+robotino:
+  pose_goal : [2, 0.5, 45] # [x y phi]
+  mode_operation : "rotate" # [move rotate RelOrientation AbsOrientation GotoGoal]
+  linear_vel : 0.5  # max:1 min:0.01
+  angular_vel : 1 # max:1 min:0.01

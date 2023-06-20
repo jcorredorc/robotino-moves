@@ -1,0 +1,24 @@
+<launch>
+    <rosparam file ="$(find robotino_moves)/config/config.yaml"/>
+    <arg name="hostname" default="172.26.1.1"/>
+   
+    <include file="$(find robotino_node)/launch/robotino_node.launch">
+     <arg name="hostname" value="$(arg hostname)" />
+    </include>
+        
+    <node name="robotino_moves" pkg="robotino_moves" type="robotino_moves_node" output="screen">
+    </node>
+
+    <node name="rviz" pkg="rviz" type="rviz" 
+    args="-d $(find robotino_moves)/rviz/config.rviz">
+    </node>
+
+</launch>
+<!--
+    <include file="$(find robotino_node)/launch/robotino_simple_node.launch">
+     <arg name="hostname" value="$(arg hostname)" />
+    </include>
+    <include file="$(find robotino_node)/launch/only_robotino_node.launch">
+    <arg name="hostname" value="$(arg hostname)" />
+    </include>
+-->
